@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,237 +10,237 @@
     <script src="main.js"></script> -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
-        function CountdownTimer(elm, tl, mes) {
-            this.initialize.apply(this, arguments);
-        }
-        CountdownTimer.prototype = {
-            initialize: function (elm, tl, mes) {
-                this.elem = document.getElementById(elm);
-                this.tl = tl;
-                this.mes = mes;
-            }, countDown: function () {
-                var timer = '';
-                var today = new Date();
-                var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
-                var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-                var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
-                var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
-                var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
-                var me = this;
+      function CountdownTimer(elm, tl, mes) {
+        this.initialize.apply(this, arguments);
+      }
+      CountdownTimer.prototype = {
+        initialize: function (elm, tl, mes) {
+          this.elem = document.getElementById(elm);
+          this.tl = tl;
+          this.mes = mes;
+        }, countDown: function () {
+          var timer = '';
+          var today = new Date();
+          var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
+          var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+          var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
+          var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+          var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
+          var me = this;
 
-                if ((this.tl - today) > 0) {
-                    if (day) timer += '<span class="day">' + day + '日と</span>';
-                    if (hour) timer += '<span class="hour">' + hour + '時間</span>';
-                    timer += '<span class="min">' + this.addZero(min) + '分</span>';
-                    this.elem.innerHTML = timer;
-                    tid = setTimeout(function () { me.countDown(); }, 10);
-                } else {
-                    this.elem.innerHTML = this.mes;
-                    return;
-                }
-            }, addZero: function (num) { return ('0' + num).slice(-2); }
-        }
-        function CDTimer() {
-            var text = '開始まで :';
-            var tl = new Date('2018/12/05 01:00:00');
-            var timer = new CountdownTimer('CDTimer', tl, '始まりました！');
-            timer.countDown();
-            target = document.getElementById("text");
-            target.innerHTML = text;
-        }
-        window.onload = function () {
-            CDTimer();
-        }
+          if ((this.tl - today) > 0) {
+            if (day) timer += '<span class="day">' + day + '日と</span>';
+            if (hour) timer += '<span class="hour">' + hour + '時間</span>';
+            timer += '<span class="min">' + this.addZero(min) + '分</span>';
+            this.elem.innerHTML = timer;
+            tid = setTimeout(function () { me.countDown(); }, 10);
+          } else {
+            this.elem.innerHTML = this.mes;
+            return;
+          }
+        }, addZero: function (num) { return ('0' + num).slice(-2); }
+      }
+      function CDTimer() {
+        var text = '開始まで :';
+        var tl = new Date('2018/12/05 01:00:00');
+        var timer = new CountdownTimer('CDTimer', tl, '始まりました！');
+        timer.countDown();
+        target = document.getElementById("text");
+        target.innerHTML = text;
+      }
+      window.onload = function () {
+        CDTimer();
+      }
     </script>
 </head>
 
 <body>
-    <div class="mv">
-        <a href="http://aka.ms/connectevent" target="_blank"><img src="./media/Connect-Go-Live_EA_R1-A_TW.gif" /></a>
-    </div>
+<div class="mv">
+    <a href="http://aka.ms/connectevent" target="_blank"><img src="./media/Connect-Go-Live_EA_R1-A_TW.gif" /></a>
+</div>
 
-    <div class="hero is-info">
-        <div class="hero-body">
-            <div class="container">
-                <div id="countdown_part" class="title">
-                    <span class="timetext" id="text"></span><span id="CDTimer"></span>
-                </div>
+<div class="hero is-info">
+    <div class="hero-body">
+        <div class="container">
+            <div id="countdown_part" class="title">
+                <span class="timetext" id="text"></span><span id="CDTimer"></span>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div id="first-message">
-            <p>日本時間の12月5日午前1時半から、Twitterで解説します。視聴の方も是非Twitterでコメントしてください！<br>始まる前の期待コメントも大歓迎！ハッシュタグは、<a href="https://twitter.com/hashtag/MSFTConnect?src=hash" target="_blank"></a>#MSFTConnect <span style="margin-left: 16px; display: inline-block;"><a href="https://twitter.com/intent/tweet?button_hashtag=MSFTConnect&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #MSFTConnect</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span></p>
-            <p>素敵なTweetをしてくれた方にはプレゼントもあるらしい… 詳細は後程お知らせ</p>
-        </div>
-
-        <div id="first-content" class="box">
-
-            <p class="title" style="text-align: center; margin-bottom: 64px; margin-top: 32px;">当日、Twitterで生ライブで解説するのは、マイクロソフトの以下の人達 </p>
-
-            <div class="live-member level">
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/yoshioterada" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/631819260566745090/BuvoVo_Z_400x400.jpg" alt=""></div>
-                            <p class="heading">@yoshioterada</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/Moriyamakyohei" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1004241172254998528/gPisn2JV_400x400.jpg" alt=""></div>
-                            <p class="heading">@Moriyamakyohei</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/satonaoki" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1027744299511758848/-HyxqDrm_400x400.jpg" alt=""></div>
-                            <p class="heading">@satonaoki</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/chack411" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1042088647833468928/E4us1sFs_400x400.jpg" alt=""></div>
-                            <p class="heading">@chack411</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/chomado" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1050242640585797632/HLKii_w3_400x400.jpg" alt=""></div>
-                            <p class="heading">@chomado</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/kazumihirose" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/857556268415766529/f6F5N2Xr_400x400.jpg" alt=""></div>
-                            <p class="heading">@kazumihirose</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/dahatake" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/908348704016416774/4GsgPl7V_400x400.jpg" alt=""></div>
-                            <p class="heading">@dahatake</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/MS_odasho" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/765727034945351680/FRMDC5g0_400x400.jpg" alt=""></div>
-                            <p class="heading">@MS_odasho</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div class="image is-128x128">
-                        <a href="https://twitter.com/embedded_george" target="_blank">
-                            <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/988253026686189568/6ACheeOR_400x400.jpg" alt=""></div>
-                            <p class="heading">@embedded_george</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <p style="margin-top: 16px; text-align: center;">多分、事前に色々な人達がつぶやいている。<a href="https://twitter.com/hashtag/MSConnect" target="_blank">#MSFTConnectをチラ見しよう</a></p>
-        </div>
-
+<div class="container">
+    <div id="first-message">
+        <p>日本時間の12月5日午前1時半から、Twitterで解説します。視聴の方も是非Twitterでコメントしてください！<br>始まる前の期待コメントも大歓迎！ハッシュタグは、<a href="https://twitter.com/hashtag/MSFTConnect?src=hash" target="_blank"></a>#MSFTConnect <span style="margin-left: 16px; display: inline-block;"><a href="https://twitter.com/intent/tweet?button_hashtag=MSFTConnect&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #MSFTConnect</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span></p>
+        <p>素敵なTweetをしてくれた方にはプレゼントもあるらしい… 詳細は後程お知らせ</p>
     </div>
 
-    <div class="hero is-info" style="margin-bottom: 32px; margin-top: 64px;" >
-        <div class="hero-body">
-            <div class="container">
-                <div class="title">同時開催</div>
-                <p class="subtitle">Twitterでつぶやいて豪華賞品をげっとぉ！</p>
+    <div id="first-content" class="box">
+
+        <p class="title" style="text-align: center; margin-bottom: 64px; margin-top: 32px;">当日、Twitterで生ライブで解説するのは、マイクロソフトの以下の人達 </p>
+
+        <div class="live-member level">
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/yoshioterada" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/631819260566745090/BuvoVo_Z_400x400.jpg" alt=""></div>
+                        <p class="heading">@yoshioterada</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/Moriyamakyohei" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1004241172254998528/gPisn2JV_400x400.jpg" alt=""></div>
+                        <p class="heading">@Moriyamakyohei</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/satonaoki" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1027744299511758848/-HyxqDrm_400x400.jpg" alt=""></div>
+                        <p class="heading">@satonaoki</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/chack411" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1042088647833468928/E4us1sFs_400x400.jpg" alt=""></div>
+                        <p class="heading">@chack411</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/chomado" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/1050242640585797632/HLKii_w3_400x400.jpg" alt=""></div>
+                        <p class="heading">@chomado</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/kazumihirose" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/857556268415766529/f6F5N2Xr_400x400.jpg" alt=""></div>
+                        <p class="heading">@kazumihirose</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/dahatake" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/908348704016416774/4GsgPl7V_400x400.jpg" alt=""></div>
+                        <p class="heading">@dahatake</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/MS_odasho" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/765727034945351680/FRMDC5g0_400x400.jpg" alt=""></div>
+                        <p class="heading">@MS_odasho</p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="image is-128x128">
+                    <a href="https://twitter.com/embedded_george" target="_blank">
+                        <div><img class="is-rounded" src="https://pbs.twimg.com/profile_images/988253026686189568/6ACheeOR_400x400.jpg" alt=""></div>
+                        <p class="heading">@embedded_george</p>
+                    </a>
+                </div>
             </div>
         </div>
+        <p style="margin-top: 16px; text-align: center;">多分、事前に色々な人達がつぶやいている。<a href="https://twitter.com/hashtag/MSConnect" target="_blank">#MSFTConnectをチラ見しよう</a></p>
     </div>
 
-    <div class="container">
-        <div class="subtitle is-1" style="text-align: center;">Socialイベント参加方法</div>
+</div>
+
+<div class="hero is-info" style="margin-bottom: 32px; margin-top: 64px;" >
+    <div class="hero-body">
+        <div class="container">
+            <div class="title">同時開催</div>
+            <p class="subtitle">Twitterでつぶやいて豪華賞品をげっとぉ！</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="subtitle is-1" style="text-align: center;">Socialイベント参加方法</div>
     <p style="text-align: center; margin-top: 32px; font-weight: bold;">期間：12 月 5 日 (水) 1 時 30分 ～ 12月6日時 0時</p>
 
     <div class="wrap-rule">
-    <div class="subtitle is-2">ルール</div>
-    <p>期間中に <a href="">#MSFTConnect</a> とメディアの ＃ をつけて Connect に関する内容をツイートしていただいた方の中から、メディア各社が独自のクライテリアで選出されます。<br />賞品の発送については、メディア各社がツイッターのダイレクトメッセージでご連絡の上発送しますので、必ず各メディアのツイッターをフォローしてください。<br /></p>
+        <div class="subtitle is-2">ルール</div>
+        <p>期間中に <a href="">#MSFTConnect</a> とメディアの ＃ をつけて Connect に関する内容をツイートしていただいた方の中から、メディア各社が独自のクライテリアで選出されます。<br />賞品の発送については、メディア各社がツイッターのダイレクトメッセージでご連絡の上発送しますので、必ず各メディアのツイッターをフォローしてください。<br /></p>
 
 
-    また発表は、賞品の発送をもって代えさせていただきますので、ご了承ください。
+        また発表は、賞品の発送をもって代えさせていただきますので、ご了承ください。
     </div>
-        <p>各社からの商品とクライテリアは以下の通り! <br><span class="has-text-danger">※どんどん追加されてくよー</span></p>
+    <p>各社からの商品とクライテリアは以下の通り! <br><span class="has-text-danger">※どんどん追加されてくよー</span></p>
 
-        <div class="box">
-            <div class="subtitle is-3">インプレス賞</div>
+    <div class="box">
+        <div class="subtitle is-3">インプレス賞</div>
 
-            <article class="message">
-                <div class="message-header">賞品</div>
-                <div class="message-body">
-                    <ul class="item-list">
-                        <li>Japan Conteiner Days(JKD)賞 (1 名)：Surface Laptop2</li>
-                        <li>Think IT 賞 (1 名)：Fire HD 10 タブレット 32GB</li>
-                    </ul>
-                </div>
-            </article>
+        <article class="message">
+            <div class="message-header">賞品</div>
+            <div class="message-body">
+                <ul class="item-list">
+                    <li>Japan Conteiner Days(JKD)賞 (1 名)：Surface Laptop2</li>
+                    <li>Think IT 賞 (1 名)：Fire HD 10 タブレット 32GB</li>
+                </ul>
+            </div>
+        </article>
 
-            <div class="subtitle is-5 has-text-grey">選定のクライテリア</div>
-            <ul class="notes">
-                <li>JKD賞：Connect();のコンテナ技術に関する内容が含まれているツイートで判断します。</li>
-                <li>Think IT賞：いいね数、ツイート・リツイート回数の多いツイートの中から総合的に判断します。</li>
-                <li>アカウント: @thinkitcojp <a href="https://twitter.com/thinkitcojp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thinkitcojp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
-                <li>ハッシュタグ: <a href="https://twitter.com/hashtag/MSFTConnect?src=hash" target="_blank">#thinkitcojp</a></li>
-            </ul>
-
-        </div>
-        <div class="box">
-            <div class="subtitle is-3">朝日インタラクティブ賞</div>
-
-            <article class="message">
-                <div class="message-header">賞品</div>
-                <div class="message-body">
-                    <ul class="item-list">
-                        <li>Surface Go 1台</li>
-                        <li>Surface Laptop 1台</li>
-                    </ul>
-                </div>
-            </article>
-
-
-            <br />
-
-            <p>ZDNET JapanのConnect();2018の記事をコメント付きでRetweetしてくれた中から、編集部が「<span class="has-text-danger">一番面白い！</span> 」と思った方にプレゼント</p>
-            <ul class="notes">
-                <li>アカウント: @zdnet_japan <a href="https://twitter.com/zdnet_japan?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thinkitcojp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
-                <li>ハッシュタグ: #zdnet_japan</li>
-            </ul>
-        </div>
+        <div class="subtitle is-5 has-text-grey">選定のクライテリア</div>
+        <ul class="notes">
+            <li>JKD賞：Connect();のコンテナ技術に関する内容が含まれているツイートで判断します。</li>
+            <li>Think IT賞：いいね数、ツイート・リツイート回数の多いツイートの中から総合的に判断します。</li>
+            <li>アカウント: @thinkitcojp <a href="https://twitter.com/thinkitcojp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thinkitcojp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+            <li>ハッシュタグ: <a href="https://twitter.com/hashtag/MSFTConnect?src=hash" target="_blank">#thinkitcojp</a></li>
+        </ul>
 
     </div>
+    <div class="box">
+        <div class="subtitle is-3">朝日インタラクティブ賞</div>
 
-    <!--
-    <p>
-        <a class="twitter-timeline" href="https://twitter.com/embedded_george/lists/connect2018experts?ref_src=twsrc%5Etfw">当日つぶやく人たちに日常</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </p> 
+        <article class="message">
+            <div class="message-header">賞品</div>
+            <div class="message-body">
+                <ul class="item-list">
+                    <li>Surface Go 1台</li>
+                    <li>Surface Laptop 1台</li>
+                </ul>
+            </div>
+        </article>
+
+
+        <br />
+
+        <p>ZDNET JapanのConnect();2018の記事をコメント付きでRetweetしてくれた中から、編集部が「<span class="has-text-danger">一番面白い！</span> 」と思った方にプレゼント</p>
+        <ul class="notes">
+            <li>アカウント: @zdnet_japan <a href="https://twitter.com/zdnet_japan?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thinkitcojp</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+            <li>ハッシュタグ: #zdnet_japan</li>
+        </ul>
+    </div>
+
+</div>
+<!--
+<p>
+    <a class="twitter-timeline" href="https://twitter.com/embedded_george/lists/connect2018experts?ref_src=twsrc%5Etfw">当日つぶやく人たちに日常</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
 -->
 
-    <div class="last-message">
-        <div class="container">
-            <div>そっけないサイトですね…そう思われた方は、Pull/Reqで、コントリビューションよろしくね！<br />
-                <a href="https://github.com/aldente-dev/aldente-dev.github.io" target="_blank">開発サイト</a></div>
-        </div>
+<div class="last-message">
+    <div class="container">
+        <div>そっけないサイトですね…そう思われた方は、Pull/Reqで、コントリビューションよろしくね！<br />
+            <a href="https://github.com/aldente-dev/aldente-dev.github.io" target="_blank">開発サイト</a></div>
     </div>
+</div>
 
 </body>
 
